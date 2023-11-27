@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ubuntu-with-sensitive-mount
+spec:
+  selector:
+    matchLabels:
+      app: ubuntu-with-sensitive-mount
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ubuntu-with-sensitive-mount
+    spec:
+      containers:
+      - name: ubuntu-with-sensitive-mount
+        image: nginx
+        securityContext:
+          privileged: false
+        volumeMounts:
+        - mountPath: /test-pd
+          name: test-volume
+      volumes:
+      - name: test-volume
+        hostPath:
+          path: /etc
+          type: Directory
