@@ -8,7 +8,7 @@ resource "aws_security_group" "test_sg1" {
     from_port        = 22
     to_port          = 22
     protocol         = "tcp"
-    cidr_blocks      = ["192.168.0.20/24"]
+    cidr_blocks      = ["0.0.0.0/0"]
   }
 
   egress {
@@ -41,7 +41,7 @@ resource "aws_security_group" "test_sg2" {
     from_port        = 3389
     to_port          = 3389
     protocol         = "tcp"
-    cidr_blocks      = ["192.168.0.20/24"]
+    cidr_blocks      = ["0.0.0.0/0"]
   }
 
   egress {
