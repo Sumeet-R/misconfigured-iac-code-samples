@@ -8,6 +8,7 @@ resource "aws_instance" "instance1" {
  vpc_security_group_ids = [aws_security_group.test_sg1.id]
   key_name = "ssh_key"
   #associate_public_ip_address = "true"
+  associate_public_ip_address = "false"
   metadata_options {
     #http_tokens = "optional"
     http_tokens = "required"
@@ -26,7 +27,9 @@ resource "aws_instance" "instance2" {
   subnet_id = aws_subnet.test_subnet1.id
  vpc_security_group_ids = [aws_security_group.test_sg2.id]
   key_name = "ssh_key"
-  associate_public_ip_address = "true"
+  #associate_public_ip_address = "true"
+  associate_public_ip_address = "false"
+
   metadata_options {
     #http_tokens = "optional"
     http_tokens = "required"
