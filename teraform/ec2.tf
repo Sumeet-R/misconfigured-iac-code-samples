@@ -7,9 +7,10 @@ resource "aws_instance" "instance1" {
   subnet_id = aws_subnet.test_subnet1.id
  vpc_security_group_ids = [aws_security_group.test_sg1.id]
   key_name = "ssh_key"
-  associate_public_ip_address = "true"
+  #associate_public_ip_address = "true"
   metadata_options {
-    http_tokens = "optional"
+    #http_tokens = "optional"
+    http_tokens = "required"
   }
   tags = {
     Name = "ec2-01_Terraform"
@@ -27,7 +28,8 @@ resource "aws_instance" "instance2" {
   key_name = "ssh_key"
   associate_public_ip_address = "true"
   metadata_options {
-    http_tokens = "optional"
+    #http_tokens = "optional"
+    http_tokens = "required"
   }
   tags = {
     Name = "ec2-02_Terraform"
