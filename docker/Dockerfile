@@ -1,3 +1,5 @@
+#FROM ngnix
+#USER root
 FROM sratch
 USER 1001
 EXPOSE 22
