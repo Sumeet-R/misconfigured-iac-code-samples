@@ -20,3 +20,6 @@ spec:
           allowPrivilegeEscalation: false
           #privileged: true
           #allowPrivilegeEscalation: true
+          capabilities:
+            drop:
+              - ALL

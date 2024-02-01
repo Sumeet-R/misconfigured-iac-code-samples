@@ -17,6 +17,9 @@ spec:
         image: nginx
         securityContext:
           privileged: false
+          capabilities:
+            drop:
+              - ALL
         volumeMounts:
         - mountPath: /test-pd
           name: test-volume
