@@ -23,5 +23,6 @@ spec:
       volumes:
       - name: test-volume
         hostPath:
-          path: /etc
+          path: /tmp
+          #path: /etc
           type: Directory

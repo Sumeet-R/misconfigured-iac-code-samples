@@ -16,5 +16,7 @@ spec:
       - name: ubuntu-privileged
         image: nginx
         securityContext:
-          privileged: true
-          allowPrivilegeEscalation: true
+          privileged: false
+          allowPrivilegeEscalation: false
+          #privileged: true
+          #allowPrivilegeEscalation: true
