@@ -7,10 +7,19 @@ resource "aws_instance" "instance1" {
   subnet_id = aws_subnet.test_subnet1.id
  vpc_security_group_ids = [aws_security_group.test_sg1.id]
   key_name = "ssh_key"
+
+  # Insecure configuration - Public IP association set to True
   #associate_public_ip_address = "true"
+
+  # Secure configuration - Public IP association set to False
   associate_public_ip_address = "false"
+
   metadata_options {
+
+    # Insecure configuration - IMDSv2 is not enforced
     #http_tokens = "optional"
+
+    # Secure configuration - IMDSv2 is enforced
     http_tokens = "required"
   }
   tags = {
@@ -27,11 +36,18 @@ resource "aws_instance" "instance2" {
   subnet_id = aws_subnet.test_subnet1.id
  vpc_security_group_ids = [aws_security_group.test_sg2.id]
   key_name = "ssh_key"
+  
+  # Insecure configuration - Public IP association set to True
   #associate_public_ip_address = "true"
+
+  # Secure configuration - Public IP association set to False
   associate_public_ip_address = "false"
 
   metadata_options {
+    # Insecure configuration - IMDSv2 is not enforced
     #http_tokens = "optional"
+
+    # Secure configuration - IMDSv2 is enforced
     http_tokens = "required"
   }
   tags = {

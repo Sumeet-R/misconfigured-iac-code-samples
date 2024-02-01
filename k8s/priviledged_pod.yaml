@@ -18,8 +18,16 @@ spec:
         securityContext:
           privileged: false
           allowPrivilegeEscalation: false
+
+          # Insecure configuration - Pod with priviledge
           #privileged: true
+
+          # Secure configuration - Priviledge set to false
+          privileged: false
+
+          # Insecure configuration - Pod should not have Priviledge escalation
           #allowPrivilegeEscalation: true
+
           capabilities:
             drop:
               - ALL
